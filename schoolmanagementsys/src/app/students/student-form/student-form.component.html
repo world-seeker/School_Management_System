@@ -1,9 +1,13 @@
-<h1 class="font-bold text-center">Add Student</h1>
 
+<div class="flex justify-center items-center h-screen ">
+<div class="md:flex border md:max-w-4xl mx-auto p-10  mb-10">
 <div class=" md:w-[500px] md:mx-auto p-5 ">
-  <form (ngSubmit)="onSubmit()" #myForm="ngForm">
+  <form 
+   class="border rounded p-2 bg-gray-100 "
+   (ngSubmit)="onSubmit()" #myForm="ngForm">
     <div class="space-y-12">
       <div class="border-b border-gray-900/10 pb-12">
+        <h1 class="font-bold text-center ">Add Student</h1>
         <div class="mt-10 grid grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-3">
           <div class="sm:col-span-3">
             <label for="first-name" class="block text-sm font-medium leading-6 text-gray-900">First name</label>
@@ -26,11 +30,11 @@
         </div>
       </div>
     </div>
-    <button type="submit" class="btn mt-1 w-full hover:bg-green-400" [disabled]="!myForm.valid">Submit</button>
+    <button type="submit" class="btn mt-1 w-full hover:bg-green-400 rounded-full p-2 font-bold" [disabled]="!myForm.valid">Submit</button>
   </form>
 </div>
 
-<div class="space-y-2 md:w-60 md:mx-auto md:items-center">
+<div class="space-y-2 md:w-60 md:mx-auto md:items-center md:flex md:flex-col  justify-center ">
 
 <button 
  (click)="gotostudentlist()"
@@ -50,4 +54,6 @@
   update Marks
 </button>
 
+</div>
+</div>
 </div>

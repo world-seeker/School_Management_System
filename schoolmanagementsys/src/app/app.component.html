@@ -1,5 +1,5 @@
 <!--Navigation bar starts-->
-<nav class="flex justify-end bg-blue-400 mx-auto w-full">
+<nav class="flex justify-end bg-blue-400 mx-auto w-full sticky top-0">
   <ul class="font-semibold p-2 flex space-x-2">
       <li>
           <a 
@@ -30,8 +30,13 @@
 </nav>
 <!--Navigation bar Ends-->
 
+  
 <!--Main content location-->
 
-<div class="p-5">
+<div class="  mx-auto">
   <router-outlet></router-outlet>
 </div>
+
+<footer class="bottom-0 fixed w-full p-5 bg-blue-400">
+    <p class="text-center text-white md:text-right">Copyright &copy; 2024 Swapnil Pandey. All rights reserved.</p>
+</footer>

@@ -20,6 +20,12 @@
         </div>
       </div>
     </div>
-    <button type="submit" class="btn mt-1 w-full hover:bg-green-400" [disabled]="!myForm.valid">Submit</button>
+    <button type="submit" class="btn mt-1 w-full rounded font-bold hover:bg-green-400" [disabled]="!myForm.valid">Submit</button>
   </form>
 </div>
+
+<button 
+ (click)="gototeacherslist()"
+ class="w-full bg-blue-400 rounded-full p-3 hover:bg-blue-500 font-bold text-white hover:text-gray-400">
+  View All Teachers
+</button>

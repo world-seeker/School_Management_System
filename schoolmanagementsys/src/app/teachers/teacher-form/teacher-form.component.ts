@@ -29,4 +29,8 @@ export class TeacherFormComponent {
        }
     });
   }
+
+  gototeacherslist(){
+   this.router.navigate(['/teacher-list'])
+  }
 }

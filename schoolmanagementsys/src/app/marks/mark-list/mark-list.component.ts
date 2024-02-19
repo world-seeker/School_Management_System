@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { MarkService } from '../mark.service';
 import { Marks } from '../marks';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-mark-list',
@@ -9,10 +10,16 @@ import { Marks } from '../marks';
 })
 export class MarkListComponent implements OnInit {
 
-  constructor(private service:MarkService){}
+  constructor(
+    private service:MarkService,
+    private router:Router
+    ){}
   marks!:Marks[]; 
   ngOnInit(): void {
     this.getMarks();
+  }
+  gotodetails(id:number){
+    this.router.navigate(['/student-detail',id])
   }
 
   getMarks(){

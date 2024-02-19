@@ -28,16 +28,17 @@
             <div class="text-sm text-gray-900"> {{student.address}}</div>
           </td>
           <td class="px-6 py-4 whitespace-nowrap space-x-1">
+            <button 
+            (click)="gotomarks(student.id)"
+            class="rounded-full bg-blue-400 p-2">
+             Details
+           </button>
           <button
            (click)="delete(student.id)"
            class="rounded-full bg-red-400 p-2">
             Delete
           </button>
-          <button 
-           (click)="gotomarks(student.id)"
-           class="rounded-full bg-blue-400 p-2">
-            Marks
-          </button>
+         
           </td>
         </tr>
         <!-- Add more rows as needed -->

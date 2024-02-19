@@ -15,7 +15,9 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.management.model.Marks;
 import com.management.model.Student;
+import com.management.repository.MarksRepository;
 import com.management.repository.StudentRepository;
 
 @RestController
@@ -24,6 +26,9 @@ public class StudentController {
 
     @Autowired
     private StudentRepository studentRepository;
+    
+    @Autowired
+    private MarksRepository marksRepository;
 
     // GET all students
     @GetMapping
@@ -40,14 +45,27 @@ public class StudentController {
 
     // POST create a new student
     @PostMapping
-    public Student createStudent(@RequestBody Student student) {
-        return studentRepository.save(student);
+    public ResponseEntity<Student> createStudent(@RequestBody Student student) {
+        Student savedStudent = studentRepository.save(student);
+
+        // Automatically create marks for the new student
+        Marks marks = new Marks();
+        marks.setStudent(savedStudent);
+        marks.setEnglishMarks(0);
+        marks.setMathsMarks(0);
+        marks.setPhysicsMarks(0);
+        // Set marks for other subjects as needed
+
+        marksRepository.save(marks);
+
+        return ResponseEntity.ok(savedStudent);
     }
 
     // DELETE a student by ID
     @DeleteMapping("/{id}")
     public ResponseEntity<Object> deleteStudent(@PathVariable Long id) {
         try {
+        	marksRepository.deleteById(id);
             studentRepository.deleteById(id);
             // Return a JSON object with success message
             return ResponseEntity.ok().body("{\"message\": \"Student with ID: " + id + " deleted successfully.\"}");

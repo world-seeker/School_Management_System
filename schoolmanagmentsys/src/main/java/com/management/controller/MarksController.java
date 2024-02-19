@@ -49,7 +49,7 @@ public class MarksController {
 
     // Update marks for a student
     @PutMapping("/{studentId}")
-    public ResponseEntity<Marks> updateMarks(@PathVariable Long studentId, @RequestBody Marks marks) {
+    public ResponseEntity<Object> updateMarks(@PathVariable Long studentId, @RequestBody Marks marks) {
         Optional<Marks> marksOptional = marksRepository.findByStudentId(studentId);
         if (marksOptional.isPresent()) {
             Marks existingMarks = marksOptional.get();
@@ -59,12 +59,15 @@ public class MarksController {
             existingMarks.setMathsMarks(marks.getMathsMarks());
             existingMarks.setPhysicsMarks(marks.getPhysicsMarks());
             // Update other subject marks as needed
-
+           String name = existingMarks.getStudent().getFirstName();
             // Save the updated marks
             Marks updatedMarks = marksRepository.save(existingMarks);
-            return new ResponseEntity<>(updatedMarks, HttpStatus.OK);
+            
+            // Return a JSON response with a success message
+            return ResponseEntity.ok().body("{\"message\": \"Marks for student with ID " +studentId+" Name: "+ name + " updated successfully.\"}");
         } else {
-            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+            // Return a JSON response with an error message
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body("{\"error\": \"Marks for student with ID " + studentId + " not found.\"}");
         }
     }
 

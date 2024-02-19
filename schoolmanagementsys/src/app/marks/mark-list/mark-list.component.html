@@ -1,7 +1,8 @@
 <!-- Table to display marks for each student -->
-<div class="container mx-auto p-4 overflow-x-auto">
-    <h2 class="text-2xl font-bold mb-4">Student Marks</h2>
-    <table class="table-auto divide-y divide-gray-200">
+<h2 class="text-2xl font-bold mb-4 text-center">Student Marks</h2>
+<div class="container bg-gray-100 overflow-x-auto mx-auto h-screen flex   ">
+  
+    <table class="table-auto divide-y divide-gray-200 mx-auto ">
         <thead class="bg-gray-50">
             <tr>
                 <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Student ID</th>
@@ -9,6 +10,9 @@
                 <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">English</th>
                 <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Maths</th>
                 <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Physics</th>
+                <th class="px-6 py-3 text-left text-xs font-medium text-gray-500">
+                    Actions
+                </th>
                 <!-- Add more subject columns as needed -->
             </tr>
         </thead>
@@ -21,6 +25,14 @@
                 <td class="px-6 py-4 whitespace-nowrap">{{ mark.englishMarks }}</td>
                 <td class="px-6 py-4 whitespace-nowrap">{{ mark.mathsMarks }}</td>
                 <td class="px-6 py-4 whitespace-nowrap">{{ mark.physicsMarks }}</td>
+                <td class="px-6 py-4 whitespace-nowrap">
+                    <button
+                      (click)="gotodetails(mark.student.id)"
+                      class="bg-blue-400 rounded-full p-2 hover:bg-blue-500"
+                     >
+                        Details
+                    </button>
+                </td>
                 <!-- Add more subject marks as needed -->
             </tr>
             

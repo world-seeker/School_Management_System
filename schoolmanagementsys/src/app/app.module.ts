@@ -8,12 +8,14 @@ import { StudentsModule } from './students/students.module';
 import { TeachersModule } from './teachers/teachers.module';
 import { HomeModule } from './home/home.module';
 import { MarksModule } from './marks/marks.module';
+import { FrontpageComponent } from './frontpage/frontpage.component';
 
 
 
 @NgModule({
   declarations: [
     AppComponent,
+    FrontpageComponent,
   ],
   imports: [
     BrowserModule,

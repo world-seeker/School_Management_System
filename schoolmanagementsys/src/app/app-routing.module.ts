@@ -8,6 +8,7 @@ import { HomeComponent } from './home/home.component';
 import { MarkListComponent } from './marks/mark-list/mark-list.component';
 import { StudentDetailsComponent } from './students/student-details/student-details.component';
 import { MarkFormComponent } from './marks/mark-form/mark-form.component';
+import { FrontpageComponent } from './frontpage/frontpage.component';
 
 
 const routes: Routes = [
@@ -18,7 +19,9 @@ const routes: Routes = [
  {path:'home', component:HomeComponent},
  {path:'mark-list',component:MarkListComponent},
  {path:"student-detail/:id",component:StudentDetailsComponent},
- {path:'mark-updation',component:MarkFormComponent}
+ {path:'mark-updation',component:MarkFormComponent},
+ {path:'mark-updation/:id',component:MarkFormComponent},
+ {path:'',component:FrontpageComponent}
 ];
 
 @NgModule({
