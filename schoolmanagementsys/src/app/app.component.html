@@ -1,0 +1,37 @@
+<!--Navigation bar starts-->
+<nav class="flex justify-end bg-blue-400 mx-auto w-full">
+  <ul class="font-semibold p-2 flex space-x-2">
+      <li>
+          <a 
+          routerLink="/home" 
+          routerLinkActive="text-red-500"class="hover:bg-gray-300 p-1"
+          >Home
+          </a>
+      </li>
+      
+      <li>
+          <a 
+          routerLink="/add-teacher" 
+          routerLinkActive="text-red-500"
+          class="hover:bg-gray-300 p-1"
+          >Teachers
+          </a>
+      </li>
+    
+      <li>
+          <a 
+          routerLink="/students-form" 
+          routerLinkActive="text-red-500"
+          class="hover:bg-gray-300 p-1"
+          >Students
+          </a>
+      </li>
+  </ul>
+</nav>
+<!--Navigation bar Ends-->
+
+<!--Main content location-->
+
+<div class="p-5">
+  <router-outlet></router-outlet>
+</div>

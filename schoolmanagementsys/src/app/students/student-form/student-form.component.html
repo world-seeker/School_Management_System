@@ -1,0 +1,53 @@
+<h1 class="font-bold text-center">Add Student</h1>
+
+<div class=" md:w-[500px] md:mx-auto p-5 ">
+  <form (ngSubmit)="onSubmit()" #myForm="ngForm">
+    <div class="space-y-12">
+      <div class="border-b border-gray-900/10 pb-12">
+        <div class="mt-10 grid grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-3">
+          <div class="sm:col-span-3">
+            <label for="first-name" class="block text-sm font-medium leading-6 text-gray-900">First name</label>
+            <div class="mt-2">
+              <input [(ngModel)]="student.firstName" type="text" name="first-name" id="first-name" class="block w-full rounded-md border-0 py-1.5 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" required>
+            </div>
+          </div>
+          <div class="sm:col-span-3">
+            <label for="last-name" class="block text-sm font-medium leading-6 text-gray-900">Last name</label>
+            <div class="mt-2">
+              <input [(ngModel)]="student.lastName" type="text" name="last-name" id="last-name" class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" required>
+            </div>
+          </div>
+          <div class="sm:col-span-4">
+            <label for="email" class="block text-sm font-medium leading-6 text-gray-900">address</label>
+            <div class="mt-2">
+              <input [(ngModel)]="student.address" id="address" name="address" type="text" class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" required>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <button type="submit" class="btn mt-1 w-full hover:bg-green-400" [disabled]="!myForm.valid">Submit</button>
+  </form>
+</div>
+
+<div class="space-y-2 md:w-60 md:mx-auto md:items-center">
+
+<button 
+ (click)="gotostudentlist()"
+ class="w-full bg-blue-400 rounded-full p-3 hover:bg-blue-500 font-bold text-white hover:text-gray-400">
+  View All Students
+</button>
+
+<button 
+ (click)="gotomarklist()"
+ class="w-full bg-blue-400 rounded-full p-3 hover:bg-blue-500 font-bold text-white hover:text-gray-400">
+  View All Marks
+</button>
+
+<button 
+ (click)="gotomarkupdation()"
+ class="w-full bg-blue-400 rounded-full p-3 hover:bg-blue-500 font-bold text-white hover:text-gray-400">
+  update Marks
+</button>
+
+</div>

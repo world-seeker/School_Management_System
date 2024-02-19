@@ -1,0 +1,48 @@
+<div class="overflow-x-auto">
+    <table class="table-auto min-w-full divide-y divide-gray-200">
+      <thead>
+        <tr>
+          <th scope="col" class="px-6 py-3 bg-gray-50 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+            First Name
+          </th>
+          <th scope="col" class="px-6 py-3 bg-gray-50 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+            Last Name
+          </th>
+          <th scope="col" class="px-6 py-3 bg-gray-50 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+            Address
+          </th>
+          <th scope="col" class="px-6 py-3 bg-gray-50 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+            Action
+          </th>
+        </tr>
+      </thead>
+      <tbody class="bg-white divide-y divide-gray-200">
+        <tr *ngFor="let student of students">
+          <td class="px-6 py-4 whitespace-nowrap">
+            <div class="text-sm text-gray-900"> {{student.firstName}}</div>
+          </td>
+          <td class="px-6 py-4 whitespace-nowrap">
+            <div class="text-sm text-gray-900"> {{student.lastName}}</div>
+          </td>
+          <td class="px-6 py-4 whitespace-nowrap">
+            <div class="text-sm text-gray-900"> {{student.address}}</div>
+          </td>
+          <td class="px-6 py-4 whitespace-nowrap space-x-1">
+          <button
+           (click)="delete(student.id)"
+           class="rounded-full bg-red-400 p-2">
+            Delete
+          </button>
+          <button 
+           (click)="gotomarks(student.id)"
+           class="rounded-full bg-blue-400 p-2">
+            Marks
+          </button>
+          </td>
+        </tr>
+        <!-- Add more rows as needed -->
+      </tbody>
+    </table>
+  </div>
+  
+
